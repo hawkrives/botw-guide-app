@@ -22,6 +22,7 @@ In the future, we will also cover:
 - Moves (how to: shield surf, parry)
 - Glitches (bomb travel, flying machine)
 - Dye Shop (colors and requirements)
+- Prerequisites (koroks, shrines, treasure, 13th memory, paraglider)
 
 ## Tools
 
