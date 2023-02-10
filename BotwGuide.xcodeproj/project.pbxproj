@@ -14,6 +14,19 @@
 		6745DD5F29949DE500C5A8DD /* BotwGuideTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6745DD5E29949DE500C5A8DD /* BotwGuideTests.swift */; };
 		6745DD6929949DE500C5A8DD /* BotwGuideUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6745DD6829949DE500C5A8DD /* BotwGuideUITests.swift */; };
 		6745DD6B29949DE500C5A8DD /* BotwGuideUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6745DD6A29949DE500C5A8DD /* BotwGuideUITestsLaunchTests.swift */; };
+		6745DD7929949DF700C5A8DD /* GRDBQuery in Frameworks */ = {isa = PBXBuildFile; productRef = 6745DD7829949DF700C5A8DD /* GRDBQuery */; };
+		6745DD7C29949E1500C5A8DD /* GRDB in Frameworks */ = {isa = PBXBuildFile; productRef = 6745DD7B29949E1500C5A8DD /* GRDB */; };
+		6745DD7E29949E6E00C5A8DD /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6745DD7D29949E6E00C5A8DD /* Persistence.swift */; };
+		6745DD8129949EBA00C5A8DD /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6745DD8029949EBA00C5A8DD /* Player.swift */; };
+		6745DD8429949EE700C5A8DD /* PlayerCountRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6745DD8329949EE700C5A8DD /* PlayerCountRequest.swift */; };
+		6745DD8629949EF600C5A8DD /* PlayerPresenceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6745DD8529949EF600C5A8DD /* PlayerPresenceRequest.swift */; };
+		6745DD8829949F0900C5A8DD /* PlayerRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6745DD8729949F0900C5A8DD /* PlayerRequest.swift */; };
+		6745DD8F29949F5700C5A8DD /* PlayerEditionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6745DD8E29949F5700C5A8DD /* PlayerEditionView.swift */; };
+		6745DD9129949F6800C5A8DD /* PlayerFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6745DD9029949F6800C5A8DD /* PlayerFormView.swift */; };
+		6745DD9329949F7900C5A8DD /* PlayerCreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6745DD9229949F7900C5A8DD /* PlayerCreationView.swift */; };
+		6745DD9529949F8600C5A8DD /* PlayerListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6745DD9429949F8600C5A8DD /* PlayerListView.swift */; };
+		6745DD982994AC9400C5A8DD /* Pulse in Frameworks */ = {isa = PBXBuildFile; productRef = 6745DD972994AC9400C5A8DD /* Pulse */; };
+		67E0D2972995551C00CDDC82 /* AppDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E0D2962995551C00CDDC82 /* AppDatabase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +57,17 @@
 		6745DD6429949DE500C5A8DD /* BotwGuideUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BotwGuideUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6745DD6829949DE500C5A8DD /* BotwGuideUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotwGuideUITests.swift; sourceTree = "<group>"; };
 		6745DD6A29949DE500C5A8DD /* BotwGuideUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotwGuideUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		6745DD7D29949E6E00C5A8DD /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		6745DD8029949EBA00C5A8DD /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		6745DD8329949EE700C5A8DD /* PlayerCountRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCountRequest.swift; sourceTree = "<group>"; };
+		6745DD8529949EF600C5A8DD /* PlayerPresenceRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerPresenceRequest.swift; sourceTree = "<group>"; };
+		6745DD8729949F0900C5A8DD /* PlayerRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerRequest.swift; sourceTree = "<group>"; };
+		6745DD8E29949F5700C5A8DD /* PlayerEditionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerEditionView.swift; sourceTree = "<group>"; };
+		6745DD9029949F6800C5A8DD /* PlayerFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerFormView.swift; sourceTree = "<group>"; };
+		6745DD9229949F7900C5A8DD /* PlayerCreationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCreationView.swift; sourceTree = "<group>"; };
+		6745DD9429949F8600C5A8DD /* PlayerListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerListView.swift; sourceTree = "<group>"; };
+		67E0D2962995551C00CDDC82 /* AppDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDatabase.swift; sourceTree = "<group>"; };
+		67E0D2982995592100CDDC82 /* BotwGuide.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BotwGuide.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +75,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6745DD982994AC9400C5A8DD /* Pulse in Frameworks */,
+				6745DD7929949DF700C5A8DD /* GRDBQuery in Frameworks */,
+				6745DD7C29949E1500C5A8DD /* GRDB in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,10 +121,15 @@
 		6745DD4C29949DE300C5A8DD /* BotwGuide */ = {
 			isa = PBXGroup;
 			children = (
-				6745DD4D29949DE300C5A8DD /* BotwGuideApp.swift */,
-				6745DD4F29949DE300C5A8DD /* ContentView.swift */,
+				67E0D2982995592100CDDC82 /* BotwGuide.entitlements */,
 				6745DD5129949DE400C5A8DD /* Assets.xcassets */,
 				6745DD5329949DE400C5A8DD /* Preview Content */,
+				6745DD7F29949EA000C5A8DD /* Models */,
+				6745DD8229949ED900C5A8DD /* Requests */,
+				6745DD8929949F1300C5A8DD /* Views */,
+				6745DD7D29949E6E00C5A8DD /* Persistence.swift */,
+				6745DD4D29949DE300C5A8DD /* BotwGuideApp.swift */,
+				67E0D2962995551C00CDDC82 /* AppDatabase.swift */,
 			);
 			path = BotwGuide;
 			sourceTree = "<group>";
@@ -127,6 +159,36 @@
 			path = BotwGuideUITests;
 			sourceTree = "<group>";
 		};
+		6745DD7F29949EA000C5A8DD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6745DD8029949EBA00C5A8DD /* Player.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		6745DD8229949ED900C5A8DD /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				6745DD8329949EE700C5A8DD /* PlayerCountRequest.swift */,
+				6745DD8529949EF600C5A8DD /* PlayerPresenceRequest.swift */,
+				6745DD8729949F0900C5A8DD /* PlayerRequest.swift */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		6745DD8929949F1300C5A8DD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6745DD4F29949DE300C5A8DD /* ContentView.swift */,
+				6745DD8E29949F5700C5A8DD /* PlayerEditionView.swift */,
+				6745DD9029949F6800C5A8DD /* PlayerFormView.swift */,
+				6745DD9229949F7900C5A8DD /* PlayerCreationView.swift */,
+				6745DD9429949F8600C5A8DD /* PlayerListView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,6 +205,11 @@
 			dependencies = (
 			);
 			name = BotwGuide;
+			packageProductDependencies = (
+				6745DD7829949DF700C5A8DD /* GRDBQuery */,
+				6745DD7B29949E1500C5A8DD /* GRDB */,
+				6745DD972994AC9400C5A8DD /* Pulse */,
+			);
 			productName = BotwGuide;
 			productReference = 6745DD4A29949DE300C5A8DD /* BotwGuide.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +282,11 @@
 				Base,
 			);
 			mainGroup = 6745DD4129949DE300C5A8DD;
+			packageReferences = (
+				6745DD7729949DF700C5A8DD /* XCRemoteSwiftPackageReference "GRDBQuery" */,
+				6745DD7A29949E1500C5A8DD /* XCRemoteSwiftPackageReference "GRDB" */,
+				6745DD962994AC9400C5A8DD /* XCRemoteSwiftPackageReference "Pulse" */,
+			);
 			productRefGroup = 6745DD4B29949DE300C5A8DD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -257,7 +329,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6745DD8129949EBA00C5A8DD /* Player.swift in Sources */,
+				6745DD9129949F6800C5A8DD /* PlayerFormView.swift in Sources */,
+				6745DD8829949F0900C5A8DD /* PlayerRequest.swift in Sources */,
+				6745DD8429949EE700C5A8DD /* PlayerCountRequest.swift in Sources */,
 				6745DD5029949DE300C5A8DD /* ContentView.swift in Sources */,
+				6745DD9529949F8600C5A8DD /* PlayerListView.swift in Sources */,
+				6745DD8F29949F5700C5A8DD /* PlayerEditionView.swift in Sources */,
+				6745DD9329949F7900C5A8DD /* PlayerCreationView.swift in Sources */,
+				67E0D2972995551C00CDDC82 /* AppDatabase.swift in Sources */,
+				6745DD8629949EF600C5A8DD /* PlayerPresenceRequest.swift in Sources */,
+				6745DD7E29949E6E00C5A8DD /* Persistence.swift in Sources */,
 				6745DD4E29949DE300C5A8DD /* BotwGuideApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -414,12 +496,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = BotwGuide/BotwGuide.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"BotwGuide/Preview Content\"";
 				DEVELOPMENT_TEAM = TMK6S7TPX2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.reference";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -432,6 +516,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = is.hawken.BotwGuide;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -443,12 +530,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = BotwGuide/BotwGuide.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"BotwGuide/Preview Content\"";
 				DEVELOPMENT_TEAM = TMK6S7TPX2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.reference";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -461,6 +550,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = is.hawken.BotwGuide;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -583,6 +675,51 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		6745DD7729949DF700C5A8DD /* XCRemoteSwiftPackageReference "GRDBQuery" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/groue/GRDBQuery";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.5.1;
+			};
+		};
+		6745DD7A29949E1500C5A8DD /* XCRemoteSwiftPackageReference "GRDB" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/groue/GRDB.swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.6.1;
+			};
+		};
+		6745DD962994AC9400C5A8DD /* XCRemoteSwiftPackageReference "Pulse" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kean/Pulse";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		6745DD7829949DF700C5A8DD /* GRDBQuery */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6745DD7729949DF700C5A8DD /* XCRemoteSwiftPackageReference "GRDBQuery" */;
+			productName = GRDBQuery;
+		};
+		6745DD7B29949E1500C5A8DD /* GRDB */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6745DD7A29949E1500C5A8DD /* XCRemoteSwiftPackageReference "GRDB" */;
+			productName = GRDB;
+		};
+		6745DD972994AC9400C5A8DD /* Pulse */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6745DD962994AC9400C5A8DD /* XCRemoteSwiftPackageReference "Pulse" */;
+			productName = Pulse;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 6745DD4229949DE300C5A8DD /* Project object */;
 }
