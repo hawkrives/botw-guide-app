@@ -176,6 +176,35 @@ struct ContentView: View {
 					.environment(\.editMode, $editMode)
 			}
 			.tabItem { Label("Received", systemImage: "tray.and.arrow.down.fill") }
+
+			NavigationView {
+				PlayerList(players: players)
+					.navigationBarTitle(Text("Compendium 6"))
+					.navigationBarItems(
+						leading: HStack {
+							EditButton()
+							newPlayerButton
+						},
+						trailing: ToggleOrderingButton(
+							ordering: $players.ordering,
+							willChange: {
+								// onChange(of: $players.wrappedValue.ordering)
+								// is not able to leave the editing mode during
+								// the animation of the list content.
+								// Workaround: stop editing before the ordering
+								// is changed, and the list content is updated.
+								stopEditing()
+							})
+					)
+					.toolbar { toolbarContent }
+					.onChange(of: players) { players in
+						if players.isEmpty {
+							stopEditing()
+						}
+					}
+					.environment(\.editMode, $editMode)
+			}
+			.tabItem { Label("Received", systemImage: "tray.and.arrow.down.fill") }
 		}
 	}
 
