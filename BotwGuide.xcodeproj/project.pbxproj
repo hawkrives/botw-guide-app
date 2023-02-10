@@ -52,7 +52,7 @@
 /* Begin PBXFileReference section */
 		6745DD4A29949DE300C5A8DD /* BotwGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BotwGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6745DD4D29949DE300C5A8DD /* BotwGuideApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotwGuideApp.swift; sourceTree = "<group>"; };
-		6745DD4F29949DE300C5A8DD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		6745DD4F29949DE300C5A8DD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; usesTabs = 1; };
 		6745DD5129949DE400C5A8DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6745DD5429949DE400C5A8DD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		6745DD5A29949DE500C5A8DD /* BotwGuideTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BotwGuideTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
