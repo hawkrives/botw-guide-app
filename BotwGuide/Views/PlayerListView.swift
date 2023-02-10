@@ -91,6 +91,7 @@ private struct PlayerRow: View {
 			Text("\(player.score) points")
 				.font(.body)
 				.foregroundColor(.secondary)
+				.monospacedDigit()
 		} icon: {
 			//            Circle()
 			//                .fill(player.profileColor)
