@@ -12,16 +12,16 @@ import SwiftUI
 struct ContentView: View {
     /// Write access to the database
     @Environment(\.appDatabase) private var appDatabase
-    
+
     /// The `players` property is automatically updated when the database changes
     @Query(PlayerRequest(ordering: .byScore)) private var players: [Player]
-    
+
     /// We'll need to leave edit mode in several occasions.
     @State private var editMode = EditMode.inactive
-    
+
     /// Tracks the presentation of the player creation sheet.
     @State private var newPlayerIsPresented = false
-    
+
     // If you want to define the query on initialization, you will prefer:
     //
     // @Query<PlayerRequest> private var players: [Player]
@@ -29,7 +29,7 @@ struct ContentView: View {
     // init(initialOrdering: PlayerRequest.Ordering) {
     //     _players = Query(PlayerRequest(ordering: initialOrdering))
     // }
-    
+
     var body: some View {
         NavigationView {
             PlayerList(players: players)
@@ -48,7 +48,8 @@ struct ContentView: View {
                             // Workaround: stop editing before the ordering
                             // is changed, and the list content is updated.
                             stopEditing()
-                        }))
+                        })
+                )
                 .toolbar { toolbarContent }
                 .onChange(of: players) { players in
                     if players.isEmpty {
@@ -58,7 +59,7 @@ struct ContentView: View {
                 .environment(\.editMode, $editMode)
         }
     }
-    
+
     private var toolbarContent: some ToolbarContent {
         ToolbarItemGroup(placement: .bottomBar) {
             Button {
@@ -68,18 +69,18 @@ struct ContentView: View {
             } label: {
                 Image(systemName: "trash").imageScale(.large)
             }
-            
+
             Spacer()
-            
+
             Button {
                 stopEditing()
                 try! appDatabase.refreshPlayers()
             } label: {
                 Image(systemName: "arrow.clockwise").imageScale(.large)
             }
-            
+
             Spacer()
-            
+
             Button {
                 stopEditing()
                 // Perform 50 refreshes in parallel
@@ -93,7 +94,7 @@ struct ContentView: View {
             }
         }
     }
-    
+
     /// The button that presents the player creation sheet.
     private var newPlayerButton: some View {
         Button {
@@ -107,7 +108,7 @@ struct ContentView: View {
             PlayerCreationView()
         }
     }
-    
+
     private func stopEditing() {
         withAnimation {
             editMode = .inactive
@@ -136,7 +137,7 @@ struct ContentView_Previews: PreviewProvider {
         Group {
             // Preview the default, empty database
             ContentView()
-            
+
             // Preview a database of random players
             ContentView().environment(\.appDatabase, .random())
         }

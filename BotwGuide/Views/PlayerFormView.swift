@@ -11,7 +11,7 @@ import SwiftUI
 /// `PlayerCreationView` and `PlayerEditionView`.
 struct PlayerFormView: View {
     @Binding var form: PlayerForm
-    
+
     var body: some View {
         List {
             TextField("Name", text: $form.name)
@@ -33,7 +33,7 @@ extension PlayerForm {
         self.name = player.name
         self.score = "\(player.score)"
     }
-    
+
     func apply(to player: inout Player) {
         player.name = name
         player.score = Int(score) ?? 0
@@ -43,12 +43,16 @@ extension PlayerForm {
 struct PlayerFormView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            PlayerFormView(form: .constant(PlayerForm(
-                name: "",
-                score: "")))
-            PlayerFormView(form: .constant(PlayerForm(
-                name: Player.randomName(),
-                score: "\(Player.randomScore())")))
+            PlayerFormView(
+                form: .constant(
+                    PlayerForm(
+                        name: "",
+                        score: "")))
+            PlayerFormView(
+                form: .constant(
+                    PlayerForm(
+                        name: Player.randomName(),
+                        score: "\(Player.randomScore())")))
         }
     }
 }

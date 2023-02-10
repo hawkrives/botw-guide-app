@@ -27,6 +27,9 @@
 		6745DD9529949F8600C5A8DD /* PlayerListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6745DD9429949F8600C5A8DD /* PlayerListView.swift */; };
 		6745DD982994AC9400C5A8DD /* Pulse in Frameworks */ = {isa = PBXBuildFile; productRef = 6745DD972994AC9400C5A8DD /* Pulse */; };
 		67E0D2972995551C00CDDC82 /* AppDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E0D2962995551C00CDDC82 /* AppDatabase.swift */; };
+		67E3647A2995F0680019D4D8 /* CGColorExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E364792995F0680019D4D8 /* CGColorExt.swift */; };
+		67E3647C2995F0810019D4D8 /* ColorExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E3647B2995F0810019D4D8 /* ColorExt.swift */; };
+		67E3647F2995F3890019D4D8 /* swift-format.config.json in Resources */ = {isa = PBXBuildFile; fileRef = 67E3647E2995F3890019D4D8 /* swift-format.config.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +71,10 @@
 		6745DD9429949F8600C5A8DD /* PlayerListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerListView.swift; sourceTree = "<group>"; };
 		67E0D2962995551C00CDDC82 /* AppDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDatabase.swift; sourceTree = "<group>"; };
 		67E0D2982995592100CDDC82 /* BotwGuide.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BotwGuide.entitlements; sourceTree = "<group>"; };
+		67E364792995F0680019D4D8 /* CGColorExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGColorExt.swift; sourceTree = "<group>"; };
+		67E3647B2995F0810019D4D8 /* ColorExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExt.swift; sourceTree = "<group>"; };
+		67E3647D2995F1790019D4D8 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		67E3647E2995F3890019D4D8 /* swift-format.config.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "swift-format.config.json"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +108,8 @@
 		6745DD4129949DE300C5A8DD = {
 			isa = PBXGroup;
 			children = (
+				67E3647D2995F1790019D4D8 /* README.md */,
+				67E3647E2995F3890019D4D8 /* swift-format.config.json */,
 				6745DD4C29949DE300C5A8DD /* BotwGuide */,
 				6745DD5D29949DE500C5A8DD /* BotwGuideTests */,
 				6745DD6729949DE500C5A8DD /* BotwGuideUITests */,
@@ -124,6 +133,7 @@
 				67E0D2982995592100CDDC82 /* BotwGuide.entitlements */,
 				6745DD5129949DE400C5A8DD /* Assets.xcassets */,
 				6745DD5329949DE400C5A8DD /* Preview Content */,
+				67E364782995F0540019D4D8 /* Extensions */,
 				6745DD7F29949EA000C5A8DD /* Models */,
 				6745DD8229949ED900C5A8DD /* Requests */,
 				6745DD8929949F1300C5A8DD /* Views */,
@@ -187,6 +197,15 @@
 				6745DD9429949F8600C5A8DD /* PlayerListView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		67E364782995F0540019D4D8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				67E364792995F0680019D4D8 /* CGColorExt.swift */,
+				67E3647B2995F0810019D4D8 /* ColorExt.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -305,6 +324,7 @@
 			files = (
 				6745DD5529949DE400C5A8DD /* Preview Assets.xcassets in Resources */,
 				6745DD5229949DE400C5A8DD /* Assets.xcassets in Resources */,
+				67E3647F2995F3890019D4D8 /* swift-format.config.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,12 +355,14 @@
 				6745DD8429949EE700C5A8DD /* PlayerCountRequest.swift in Sources */,
 				6745DD5029949DE300C5A8DD /* ContentView.swift in Sources */,
 				6745DD9529949F8600C5A8DD /* PlayerListView.swift in Sources */,
+				67E3647A2995F0680019D4D8 /* CGColorExt.swift in Sources */,
 				6745DD8F29949F5700C5A8DD /* PlayerEditionView.swift in Sources */,
 				6745DD9329949F7900C5A8DD /* PlayerCreationView.swift in Sources */,
 				67E0D2972995551C00CDDC82 /* AppDatabase.swift in Sources */,
 				6745DD8629949EF600C5A8DD /* PlayerPresenceRequest.swift in Sources */,
 				6745DD7E29949E6E00C5A8DD /* Persistence.swift in Sources */,
 				6745DD4E29949DE300C5A8DD /* BotwGuideApp.swift in Sources */,
+				67E3647C2995F0810019D4D8 /* ColorExt.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

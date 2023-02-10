@@ -8,46 +8,6 @@
 import GRDB
 import SwiftUI
 
-extension CGColor {
-    private func processForReadability(_ col: CGFloat) -> CGFloat {
-        if (col <= 0.03928) {
-          return col / 12.92;
-        }
-
-        return pow((col + 0.055) / 1.055, 2.4);
-    }
-
-    func readableForeground() -> CGColor {
-        let r = processForReadability(self.components![0] / 255);
-        let g = processForReadability(self.components![1] / 255);
-        let b = processForReadability(self.components![2] / 255);
-        
-        let light = (0.2126 * r) + (0.7152 * g) + (0.0722 * b);
-        return (light > 0.179) ? CGColor(gray: 0, alpha: 1) : CGColor(gray: 1, alpha: 1)
-    }
-}
-
-extension Color {
-    static func randomColor(_ seed: String) -> Color {
-        let total: Int = seed.unicodeScalars.reduce(0, { index, ch in Int(UInt32(ch)) })
-        
-        srand48(total * 200)
-        let r = CGFloat(drand48())
-        
-        srand48(total)
-        let g = CGFloat(drand48())
-        
-        srand48(total / 200)
-        let b = CGFloat(drand48())
-        
-        return Color(red: r, green: g, blue: b)
-    }
-    
-    func readableForeground() -> Color {
-        Color(self.cgColor!.readableForeground())
-    }
-}
-
 /// The Player struct.
 ///
 /// Identifiable conformance supports SwiftUI list animations, and type-safe
@@ -61,7 +21,7 @@ struct Player: Identifiable, Equatable {
     var id: Int64?
     var name: String
     var score: Int
-    
+
     var profileColor: Color {
         Color.randomColor(name)
     }
@@ -85,22 +45,22 @@ extension Player {
         "Victor", "Violette", "Wilfried", "Wilhelmina", "Yvon", "Yann",
         "Zazie", "Zoé",
     ]
-    
+
     /// Creates a new player with empty name and zero score
     static func new() -> Player {
         Player(id: nil, name: "", score: 0)
     }
-    
+
     /// Creates a new player with random name and random score
     static func makeRandom() -> Player {
         Player(id: nil, name: randomName(), score: randomScore())
     }
-    
+
     /// Returns a random name
     static func randomName() -> String {
         names.randomElement()!
     }
-    
+
     /// Returns a random score
     static func randomScore() -> Int {
         10 * Int.random(in: 0...100)
@@ -117,7 +77,7 @@ extension Player: Codable, FetchableRecord, MutablePersistableRecord {
         static let name = Column(CodingKeys.name)
         static let score = Column(CodingKeys.score)
     }
-    
+
     /// Updates a player id after it has been inserted in the database.
     mutating func didInsert(_ inserted: InsertionSuccess) {
         id = inserted.rowID
@@ -142,7 +102,7 @@ extension DerivableRequest<Player> {
         // See https://github.com/groue/GRDB.swift/blob/master/README.md#string-comparison
         order(Player.Columns.name.collating(.localizedCaseInsensitiveCompare))
     }
-    
+
     /// A request of players ordered by score.
     ///
     /// For example:

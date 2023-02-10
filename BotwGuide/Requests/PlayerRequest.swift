@@ -26,14 +26,14 @@ struct PlayerRequest: Queryable {
         case byScore
         case byName
     }
-    
+
     /// The ordering used by the player request.
     var ordering: Ordering
-    
+
     // MARK: - Queryable Implementation
-    
+
     static var defaultValue: [Player] { [] }
-    
+
     func publisher(in appDatabase: AppDatabase) -> AnyPublisher<[Player], Error> {
         // Build the publisher from the general-purpose read-only access
         // granted by `appDatabase.reader`.
@@ -45,10 +45,11 @@ struct PlayerRequest: Queryable {
                 // The `.immediate` scheduling feeds the view right on
                 // subscription, and avoids an undesired animation when the
                 // application starts.
-                scheduling: .immediate)
+                scheduling: .immediate
+            )
             .eraseToAnyPublisher()
     }
-    
+
     // This method is not required by Queryable, but it makes it easier
     // to test PlayerRequest.
     func fetchValue(_ db: Database) throws -> [Player] {

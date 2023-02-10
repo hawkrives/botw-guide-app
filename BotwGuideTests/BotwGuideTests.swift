@@ -6,6 +6,7 @@
 //
 
 import XCTest
+
 @testable import BotwGuide
 
 final class BotwGuideTests: XCTestCase {

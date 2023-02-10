@@ -10,16 +10,16 @@ import SwiftUI
 struct PlayerList: View {
     /// Write access to the database
     @Environment(\.appDatabase) private var appDatabase
-    
+
     /// The players in the list
     var players: [Player]
-    
+
     /// The selected list items
     @State private var selection: Set<Player.ID> = []
-    
+
     /// The search term
     @State private var searchTerm: String = ""
-    
+
     /// The search tokens
     enum FruitToken: Identifiable, Hashable, CaseIterable {
         case apple
@@ -27,17 +27,17 @@ struct PlayerList: View {
         case banana
         var id: Self { self }
     }
-    
+
     @State private var tokens: [FruitToken] = []
-    
+
     /// Any search scopes
     enum ProductScope {
         case fruit
         case vegetable
     }
-    
+
     @State private var scope: ProductScope = .fruit
-    
+
     var body: some View {
         List(selection: $selection) {
             ForEach(players) { player in
@@ -46,7 +46,7 @@ struct PlayerList: View {
                         .navigationBarTitle(player.name)
                 ) {
                     PlayerRow(player: player)
-                    // Don't animate player update
+                        // Don't animate player update
                         .animation(nil, value: player)
                 }
             }
@@ -59,7 +59,8 @@ struct PlayerList: View {
         .animation(.default, value: players)
         .listStyle(.plain)
         .searchable(text: $searchTerm, tokens: $tokens) {
-            token in switch token {
+            token in
+            switch token {
             case .apple: Text("Apple")
             case .pear: Text("Pear")
             case .banana: Text("Bananna")
@@ -79,14 +80,14 @@ struct PlayerList: View {
 
 private struct PlayerRow: View {
     var player: Player
-    
+
     var body: some View {
         Label {
             Text(player.name)
                 .font(.body)
-            
+
             Spacer()
-            
+
             Text("\(player.score) points")
                 .font(.body)
                 .foregroundColor(.secondary)

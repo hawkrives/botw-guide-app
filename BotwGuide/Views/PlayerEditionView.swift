@@ -14,12 +14,12 @@ struct PlayerEditionView: View {
     @Environment(\.isPresented) private var isPresented
     private let player: Player
     @State private var form: PlayerForm
-    
+
     init(player: Player) {
         self.player = player
         self.form = PlayerForm(player)
     }
-    
+
     var body: some View {
         PlayerFormView(form: $form)
             .onChange(of: isPresented) { isPresented in

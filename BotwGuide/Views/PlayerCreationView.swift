@@ -15,13 +15,14 @@ struct PlayerCreationView: View {
     @State private var form = PlayerForm(name: "", score: "")
     @State private var errorAlertIsPresented = false
     @State private var errorAlertTitle = ""
-    
+
     var body: some View {
         NavigationView {
             PlayerFormView(form: $form)
                 .alert(
                     isPresented: $errorAlertIsPresented,
-                    content: { Alert(title: Text(errorAlertTitle)) })
+                    content: { Alert(title: Text(errorAlertTitle)) }
+                )
                 .navigationBarTitle("New Player")
                 .navigationBarItems(
                     leading: Button(role: .cancel) {
@@ -36,7 +37,7 @@ struct PlayerCreationView: View {
                     })
         }
     }
-    
+
     private func save() {
         do {
             var player = Player(id: nil, name: "", score: 0)
@@ -44,7 +45,8 @@ struct PlayerCreationView: View {
             try appDatabase.savePlayer(&player)
             dismiss()
         } catch {
-            errorAlertTitle = (error as? LocalizedError)?.errorDescription ?? "An error occurred"
+            errorAlertTitle =
+                (error as? LocalizedError)?.errorDescription ?? "An error occurred"
             errorAlertIsPresented = true
         }
     }

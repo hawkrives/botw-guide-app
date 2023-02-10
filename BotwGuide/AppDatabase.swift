@@ -19,7 +19,7 @@ struct AppDatabase {
         self.dbWriter = dbWriter
         try migrator.migrate(dbWriter)
     }
-    
+
     /// Provides access to the database.
     ///
     /// Application can use a `DatabasePool`, while SwiftUI previews and tests
@@ -27,19 +27,19 @@ struct AppDatabase {
     ///
     /// See <https://swiftpackageindex.com/groue/grdb.swift/documentation/grdb/databaseconnections>
     private let dbWriter: any DatabaseWriter
-    
+
     /// The DatabaseMigrator that defines the database schema.
     ///
     /// See <https://swiftpackageindex.com/groue/grdb.swift/documentation/grdb/migrations>
     private var migrator: DatabaseMigrator {
         var migrator = DatabaseMigrator()
-        
+
         #if DEBUG
-        // Speed up development by nuking the database when migrations change
-        // See <https://swiftpackageindex.com/groue/grdb.swift/documentation/grdb/migrations>
-        migrator.eraseDatabaseOnSchemaChange = true
+            // Speed up development by nuking the database when migrations change
+            // See <https://swiftpackageindex.com/groue/grdb.swift/documentation/grdb/migrations>
+            migrator.eraseDatabaseOnSchemaChange = true
         #endif
-        
+
         migrator.registerMigration("createPlayer") { db in
             // Create a table
             // See <https://swiftpackageindex.com/groue/grdb.swift/documentation/grdb/databaseschema>
@@ -49,12 +49,12 @@ struct AppDatabase {
                 t.column("score", .integer).notNull()
             }
         }
-        
+
         // Migrations for future application versions will be inserted here:
         // migrator.registerMigration(...) { db in
         //     ...
         // }
-        
+
         return migrator
     }
 }
@@ -65,7 +65,7 @@ extension AppDatabase {
     /// the database.
     enum ValidationError: LocalizedError {
         case missingName
-        
+
         var errorDescription: String? {
             switch self {
             case .missingName:
@@ -73,7 +73,7 @@ extension AppDatabase {
             }
         }
     }
-    
+
     /// Saves (inserts or updates) a player. When the method returns, the
     /// player is present in the database, and its id is not nil.
     func savePlayer(_ player: inout Player) throws {
@@ -84,21 +84,21 @@ extension AppDatabase {
             try player.save(db)
         }
     }
-    
+
     /// Delete the specified players
     func deletePlayers(ids: [Int64]) throws {
         try dbWriter.write { db in
             _ = try Player.deleteAll(db, ids: ids)
         }
     }
-    
+
     /// Delete all players
     func deleteAllPlayers() throws {
         try dbWriter.write { db in
             _ = try Player.deleteAll(db)
         }
     }
-    
+
     /// Refresh all players (by performing some random changes, for demo purpose).
     func refreshPlayers() throws {
         try dbWriter.write { db in
@@ -108,14 +108,14 @@ extension AppDatabase {
             } else {
                 // Insert a player
                 if Bool.random() {
-                    _ = try Player.makeRandom().inserted(db) // insert but ignore inserted id
+                    _ = try Player.makeRandom().inserted(db)  // insert but ignore inserted id
                 }
-                
+
                 // Delete a random player
                 if Bool.random() {
                     try Player.order(sql: "RANDOM()").limit(1).deleteAll(db)
                 }
-                
+
                 // Update some players
                 for var player in try Player.fetchAll(db) where Bool.random() {
                     try player.updateChanges(db) {
@@ -125,7 +125,7 @@ extension AppDatabase {
             }
         }
     }
-    
+
     /// Create random players if the database is empty.
     func createRandomPlayersIfEmpty() throws {
         try dbWriter.write { db in
@@ -149,15 +149,15 @@ extension AppDatabase {
     func createPlayersForUITests() throws {
         try dbWriter.write { db in
             try AppDatabase.uiTestPlayers.forEach { player in
-                _ = try player.inserted(db) // insert but ignore inserted id
+                _ = try player.inserted(db)  // insert but ignore inserted id
             }
         }
     }
-    
+
     /// Support for `createRandomPlayersIfEmpty()` and `refreshPlayers()`.
     private func createRandomPlayers(_ db: Database) throws {
         for _ in 0..<8 {
-            _ = try Player.makeRandom().inserted(db) // insert but ignore inserted id
+            _ = try Player.makeRandom().inserted(db)  // insert but ignore inserted id
         }
     }
 }

@@ -12,9 +12,9 @@ import GRDBQuery
 /// A @Query request that observes the _presence_ of the player in the database.
 struct PlayerPresenceRequest: Queryable {
     static var defaultValue: PlayerPresence { .missing }
-    
+
     var id: Int64
-    
+
     func publisher(in dbQueue: DatabaseQueue) -> AnyPublisher<PlayerPresence, Error> {
         ValueObservation
             .tracking(Player.filter(id: id).fetchOne)
@@ -35,13 +35,13 @@ struct PlayerPresenceRequest: Queryable {
 enum PlayerPresence {
     /// The player exists in the database
     case existing(Player)
-    
+
     /// Player no longer exists, but we have its latest value.
     case gone(Player)
-    
+
     /// Player does not exist, and we don't have any information about it.
     case missing
-    
+
     var player: Player? {
         switch self {
         case let .existing(player), let .gone(player):
@@ -50,7 +50,7 @@ enum PlayerPresence {
             return nil
         }
     }
-    
+
     var exists: Bool {
         switch self {
         case .existing:
